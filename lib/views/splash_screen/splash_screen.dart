@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/views/login_screen/forgot_password.dart';
+import 'package:quiz_app/views/on_boarding_screen/on_boarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(Duration(seconds: 3)).then((value) => Navigator.of(context)
         .pushReplacement(
-            MaterialPageRoute(builder: (context) => ForgotPasswordScreen())));
+            MaterialPageRoute(builder: (context) => OnBoardingScreen())));
     super.initState();
   }
 
