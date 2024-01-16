@@ -81,7 +81,7 @@ class LoginScreen extends StatelessWidget {
               height: 100,
             ),
             Container(
-              width: double.infinity,
+              width: MediaQuery.of(context).size.width * .8,
               height: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),

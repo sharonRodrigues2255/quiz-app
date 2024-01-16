@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/views/login_screen/login_screen.dart';
-import 'package:quiz_app/views/register_screen/register_screen.dart';
 import 'package:quiz_app/views/splash_screen/splash_screen.dart';
 
 void main() {

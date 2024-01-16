@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/views/login_screen/forgot_password.dart';
 import 'package:quiz_app/views/on_boarding_screen/on_boarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
