@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/views/login_screen/forgot_password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -27,7 +28,6 @@ class LoginScreen extends StatelessWidget {
                   height: 30,
                 ),
                 Container(
-                  height: 130,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -42,16 +42,35 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      TextField(
-                        decoration: InputDecoration(
-                          isDense: true,
-                          prefixIcon: const Icon(Icons.lock_clock_outlined),
-                          hintText: "Password",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Column(
+                        children: [
+                          TextField(
+                            decoration: InputDecoration(
+                              isDense: true,
+                              prefixIcon: const Icon(Icons.lock_clock_outlined),
+                              hintText: "Password",
+                              hintStyle: const TextStyle(),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
                           ),
-                        ),
+                          Row(
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ForgotPasswordScreen()));
+                                  },
+                                  child: Text("Forgot password?")),
+                            ],
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -62,7 +81,7 @@ class LoginScreen extends StatelessWidget {
               height: 100,
             ),
             Container(
-              width: double.infinity,
+              width: MediaQuery.of(context).size.width * .8,
               height: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),

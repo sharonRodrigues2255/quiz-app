@@ -16,7 +16,7 @@ class RegisterScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Sign up',
+                  'Register',
                   style: TextStyle(
                     fontSize: 37,
                     fontWeight: FontWeight.w700,
@@ -70,7 +70,7 @@ class RegisterScreen extends StatelessWidget {
               ],
             ),
             Container(
-              width: double.infinity,
+              width: MediaQuery.of(context).size.width * .8,
               height: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
@@ -78,7 +78,7 @@ class RegisterScreen extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "Signup",
+                  "Register",
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w700,
