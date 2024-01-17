@@ -13,21 +13,26 @@ class OnBoardingScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Quiz App",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            Text("Welcome to quiz app"),
-            SizedBox(
+            const Text("Welcome to quiz app"),
+            const SizedBox(
               height: 45,
             ),
             InkWell(
               onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const LoginScreen()));
               },
               child: Container(
-                child: Center(
+                height: 50,
+                width: MediaQuery.of(context).size.width * .8,
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(30)),
+                child: const Center(
                   child: Text(
                     "Login",
                     style: TextStyle(
@@ -36,14 +41,9 @@ class OnBoardingScreen extends StatelessWidget {
                         color: Colors.white),
                   ),
                 ),
-                height: 50,
-                width: MediaQuery.of(context).size.width * .8,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(30)),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             InkWell(
@@ -52,7 +52,13 @@ class OnBoardingScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => RegisterScreen()));
               },
               child: Container(
-                child: Center(
+                height: 50,
+                width: MediaQuery.of(context).size.width * .8,
+                decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: Colors.black),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)),
+                child: const Center(
                   child: Text(
                     "Register",
                     style: TextStyle(
@@ -61,12 +67,6 @@ class OnBoardingScreen extends StatelessWidget {
                         color: Colors.black),
                   ),
                 ),
-                height: 50,
-                width: MediaQuery.of(context).size.width * .8,
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30)),
               ),
             )
           ],

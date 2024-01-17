@@ -11,15 +11,15 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3)).then((value) => Navigator.of(context)
+    Future.delayed(const Duration(seconds: 3)).then((value) => Navigator.of(context)
         .pushReplacement(
-            MaterialPageRoute(builder: (context) => OnBoardingScreen())));
+            MaterialPageRoute(builder: (context) => const OnBoardingScreen())));
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
