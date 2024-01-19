@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/const/const.dart';
 import 'package:quiz_app/views/rewards_page/rewards_page.dart';
+import 'package:quiz_app/views/rewards_screen/rewards_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -120,6 +121,11 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
                               return const LevelSelectionPage();
+                            }));
+                          } else if (index == 1) {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const RewardScreen();
                             }));
                           }
                         },
