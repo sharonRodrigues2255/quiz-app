@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/const/const.dart';
 import 'package:quiz_app/views/login_screen/create_new_password.dart';
 
 class OtpVerificationPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: authPageBackColor,
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
@@ -29,31 +30,45 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Row(
-                children: [
-                  Text(
-                    'Enter OTP',
-                    style: TextStyle(
-                      fontSize: 37,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
+              const SizedBox(
+                height: 30,
               ),
-              const Row(
+              Row(
                 children: [
-                  Text(
-                    "An otp is sent to email",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.black,
-                    ),
-                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(Icons.arrow_back))
                 ],
               ),
               const SizedBox(
-                height: 190,
+                height: 10,
+              ),
+              const Text(
+                "Verification",
+                style: TextStyle(
+                  fontFamily: mainFont,
+                  fontSize: 40,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: const DecorationImage(
+                    image: AssetImage(
+                        "assets/images/verification_gif_quiz_app.gif"),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 60,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -64,6 +79,10 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
 
                     //textfiel 1
                     child: TextField(
+                      style: const TextStyle(
+                        fontFamily: mainFont,
+                        fontSize: 24,
+                      ),
                       keyboardType: TextInputType.datetime,
                       textAlign: TextAlign.center,
                       onChanged: (value) {
@@ -90,6 +109,10 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
 
                     //textfield 2
                     child: TextField(
+                      style: const TextStyle(
+                        fontFamily: mainFont,
+                        fontSize: 24,
+                      ),
                       keyboardType: TextInputType.datetime,
                       textAlign: TextAlign.center,
                       onChanged: (value) {
@@ -116,6 +139,10 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
 
                     //textfild 3
                     child: TextField(
+                      style: const TextStyle(
+                        fontFamily: mainFont,
+                        fontSize: 24,
+                      ),
                       keyboardType: TextInputType.datetime,
                       textAlign: TextAlign.center,
                       onChanged: (value) {
@@ -142,10 +169,14 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
 
                     //textfild 4
                     child: TextField(
+                      style: const TextStyle(
+                        fontFamily: mainFont,
+                        fontSize: 24,
+                      ),
                       keyboardType: TextInputType.datetime,
                       textAlign: TextAlign.center,
                       onChanged: (value) {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) {
@@ -172,20 +203,21 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
               InkWell(
                 onTap: () {},
                 child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width * .8,
+                  width: MediaQuery.of(context).size.width,
+                  height: 60,
                   decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.black),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(22),
+                    color: mainColor,
                   ),
                   child: const Center(
                     child: Text(
                       "Submit",
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                        fontFamily: mainFont,
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

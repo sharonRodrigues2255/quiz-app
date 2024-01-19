@@ -1,321 +1,269 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/const/const.dart';
+import 'package:quiz_app/views/rewards_page/rewards_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List ofFirstContainer = [
+    ["assets/images/level_selection_gif.gif", "LEVEL", const Color(0xFF75BAF1)],
+    ["assets/images/rewards_gif_quiz.gif", "REWARDS", const Color(0xFFF35453)],
+  ];
+
+  List ofSecondPages = [
+    ["assets/images/eco_gif.gif", "INDIAN ECONOMIC", const Color(0xFFB375F7)],
+    ["assets/images/ev_gif.gif", "MICRO\nECO", const Color(0xFFFDBE6C)],
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 50,
-        leading: Container(),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu_rounded,
-                color: Color.fromARGB(255, 37, 37, 37),
-                size: 37,
-              ))
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 32,
-                        backgroundImage: NetworkImage(
-                            "https://img.freepik.com/premium-vector/avatar-icon002_750950-52.jpg?size=338&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais"),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Good morning"),
-                          Text(
-                            "User name",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w800,
-                            ),
+      backgroundColor: authPageBackColor,
+      body: Stack(
+        children: [
+          const Positioned(
+            left: 230,
+            bottom: 390,
+            child: CircleAvatar(
+              backgroundColor: Color.fromARGB(64, 144, 168, 255),
+              radius: 200,
+            ),
+          ),
+          const Positioned(
+            top: 390,
+            right: 100,
+            child: CircleAvatar(
+              backgroundColor: Color.fromARGB(64, 144, 168, 255),
+              radius: 170,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 40,
+              left: 10,
+              right: 10,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const CircleAvatar(
+                      backgroundImage:
+                          AssetImage("assets/images/Ellipse 186.png"),
+                      radius: 30,
+                    ),
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Good Morning !",
+                          style: TextStyle(
+                            fontFamily: mainFont,
+                            color: Color(0xFF9D9AA0),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
+                        ),
+                        Text(
+                          "User name",
+                          style: TextStyle(
+                            fontFamily: mainFont,
+                            fontSize: 25,
+                            color: Color(0xFF3B3350),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 50,
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        gradient: const LinearGradient(colors: [
-                          Color.fromARGB(255, 167, 80, 182),
-                          Color.fromARGB(255, 171, 36, 255),
-                        ])),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
-                    child: const Center(
-                      child: Row(
+                        color: const Color(0xFF41C88E),
+                      ),
+                      child: const Row(
                         children: [
-                          Icon(
-                            Icons.money_outlined,
-                            color: Colors.white,
+                          CircleAvatar(
+                            backgroundImage: AssetImage(
+                                "assets/images/point_gif_quiz_app.gif"),
                           ),
                           Text(
-                            "1200",
+                            "2000",
                             style: TextStyle(
+                              fontFamily: mainFont,
                               color: Colors.white,
-                              fontSize: 19,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(22),
-                      color: const Color.fromARGB(255, 78, 164, 235),
-                    ),
-                    child: const Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.tune,
-                            size: 80,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "LEVEL",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 19,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(22),
-                      color: const Color.fromARGB(255, 241, 102, 67),
-                    ),
-                    child: const Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.quiz_outlined,
-                            size: 80,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "Join Quiz",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 19,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(22),
-                      color: const Color.fromARGB(255, 38, 212, 46),
-                    ),
-                    child: const Center(
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.stars,
-                            size: 80,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "REWARDS",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 19,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height / 1.8,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    color: Colors.black,
-                  ),
+                    Image.asset("assets/images/Vector (1).png"),
+                  ],
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    children: [
-                      const Text(
-                        "Select Category",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 68, 68, 68),
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: List.generate(
+                    ofFirstContainer.length,
+                    (index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      //containers for rewards and level
+                      child: InkWell(
+                        onTap: () {
+                          if (index == 0) {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const LevelSelectionPage();
+                            }));
+                          }
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 2.4,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(22),
+                            color: ofFirstContainer[index][2],
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                foregroundImage: AssetImage(
+                                  ofFirstContainer[index][0],
+                                ),
+                                radius: 43,
+                              ),
+                              Text(
+                                ofFirstContainer[index][1],
+                                style: const TextStyle(
+                                  fontFamily: mainFont,
+                                  fontSize: 24,
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(60),
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 236, 189, 48),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Center(
-                                child: Text(
-                              "IE",
-                              style: TextStyle(
-                                fontSize: 37,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                const Text(
+                  "Select Category",
+                  style: TextStyle(
+                    fontFamily: mainFont,
+                    fontSize: 28,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: List.generate(
+                    ofSecondPages.length,
+                    (index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+
+                      //containers for categories
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 2.4,
+                        height: 170,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(22),
+                          color: ofSecondPages[index][2],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              foregroundImage: AssetImage(
+                                ofSecondPages[index][0],
                               ),
-                            )),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(58),
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 89, 48, 236),
-                              borderRadius: BorderRadius.circular(20),
+                              radius: 43,
                             ),
-                            child: const Center(
-                                child: Text(
-                              "ME",
-                              style: TextStyle(
-                                fontSize: 37,
+                            Text(
+                              ofSecondPages[index][1],
+                              style: const TextStyle(
+                                fontFamily: mainFont,
+                                fontSize: 24,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w800,
                               ),
-                            )),
-                          )
-                        ],
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Top Users",
+                            "Top Authors",
                             style: TextStyle(
+                              fontFamily: mainFont,
                               fontSize: 27,
-                              fontWeight: FontWeight.w700,
                             ),
                           ),
                           Text(
-                            "view all",
+                            "View all",
                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              color: Color.fromARGB(255, 160, 160, 160),
+                              fontFamily: mainFont,
+                              color: mainColor,
+                              fontSize: 24,
                             ),
                           )
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 34,
-                                backgroundImage: NetworkImage(
-                                    "https://img.freepik.com/premium-vector/avatar-icon002_750950-52.jpg?size=338&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais"),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: List.generate(4, (index) {
+                            return const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  CircleAvatar(
+                                    foregroundImage: AssetImage(
+                                        "assets/images/Ellipse 186.png"),
+                                    radius: 38,
+                                  ),
+                                  Text(
+                                    "Users Name",
+                                    style: TextStyle(
+                                      fontFamily: mainFont,
+                                      fontSize: 18,
+                                    ),
+                                  )
+                                ],
                               ),
-                              Text("User name"),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                    "https://img.freepik.com/premium-vector/avatar-icon002_750950-52.jpg?size=338&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais"),
-                                radius: 34,
-                              ),
-                              Text("User name"),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                    "https://img.freepik.com/premium-vector/avatar-icon002_750950-52.jpg?size=338&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais"),
-                                radius: 34,
-                              ),
-                              Text("User name"),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                    "https://img.freepik.com/premium-vector/avatar-icon002_750950-52.jpg?size=338&ext=jpg&ga=GA1.1.632798143.1705449600&semt=ais"),
-                                radius: 34,
-                              ),
-                              Text("User name"),
-                            ],
-                          ),
-                        ],
+                            );
+                          }),
+                        ),
                       )
                     ],
                   ),
-                ),
-              ),
-            ],
+                )
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
